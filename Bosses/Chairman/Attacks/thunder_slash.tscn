@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bn7n2nay3p6yw"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/telegraph_strike.gd" id="1_ts"]
+[ext_resource type="Texture2D" uid="uid://8pr2kqu5axbw" path="res://Bosses/Chairman/Attacks/Thunder Slash/SFX301_01.png" id="2_t1"]
+[ext_resource type="Texture2D" uid="uid://cxysskpq6njuq" path="res://Bosses/Chairman/Attacks/Thunder Slash/SFX301_02.png" id="3_t2"]
+[ext_resource type="Texture2D" uid="uid://c4katjt02eiq5" path="res://Bosses/Chairman/Attacks/Thunder Slash/SFX301_03.png" id="4_t3"]
+[ext_resource type="Texture2D" uid="uid://cymulnyd8iles" path="res://Bosses/Chairman/Attacks/Thunder Slash/SFX301_04.png" id="5_t4"]
+[ext_resource type="Texture2D" uid="uid://buc2otg7sg0d3" path="res://Bosses/Chairman/Attacks/Thunder Slash/SFX301_05.png" id="6_t5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t5")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts"]
+size = Vector2(56, 48)
+
+[node name="ThunderSlash" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ts")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.4, 2.4)
+sprite_frames = SubResource("SpriteFrames_ts")
+animation = &"strike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ts")

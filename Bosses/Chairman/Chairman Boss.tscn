@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cad6ocu21lpsi"]
+
+[ext_resource type="Texture2D" uid="uid://bj3mnuyjvcogj" path="res://Bosses/Chairman/Chairmanboss.png" id="1_xuu4i"]
+[ext_resource type="Script" uid="uid://s1p4ruw8qnxw" path="res://Bosses/Chairman/chairman_boss.gd" id="2_boss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orn5j"]
+atlas = ExtResource("1_xuu4i")
+region = Rect2(0, 0, 411, 607)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5v4sm"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orn5j")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xuu4i"]
+radius = 39.0
+height = 168.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossbg"]
+bg_color = Color(0.08, 0.07, 0.1, 0.85)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossfill"]
+bg_color = Color(0.78, 0.15, 0.2, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="ChairmanBoss" type="CharacterBody2D" unique_id=1551645378 groups=["enemy"]]
+position = Vector2(8, 32)
+collision_layer = 4
+script = ExtResource("2_boss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554288482]
+scale = Vector2(0.35036498, 0.31630975)
+sprite_frames = SubResource("SpriteFrames_5v4sm")
+animation = &"idle"
+autoplay = "idle"
+metadata/_edit_group_ = true
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1940910921]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1305907130]
+shape = SubResource("CapsuleShape2D_xuu4i")
+
+[node name="Timer" type="Timer" parent="." unique_id=275369667]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=537520275]
+shape = SubResource("CapsuleShape2D_xuu4i")
+
+[node name="BossUI" type="CanvasLayer" parent="." unique_id=1977291220]
+visible = false
+
+[node name="BossName" type="Label" parent="BossUI" unique_id=1696084635]
+offset_left = 90.0
+offset_top = 226.0
+offset_right = 390.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 10
+text = "CHAIRMAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="BossUI" unique_id=1669451408]
+offset_left = 90.0
+offset_top = 242.0
+offset_right = 390.0
+offset_bottom = 252.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bossbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bossfill")
+max_value = 12.0
+value = 12.0
+show_percentage = false

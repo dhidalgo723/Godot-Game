@@ -1,0 +1,20 @@
+# Godot 4+ — carpeta de caché e importaciones (se regenera sola al abrir el proyecto)
+.godot/
+/android/
+
+# Exportaciones del juego
+export_presets.cfg
+/build/
+/exports/
+
+# Archivos temporales del editor
+*.tmp
+*.import.bak
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Ajustes locales de Claude Code
+.claude/settings.local.json

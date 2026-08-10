@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cwk3k4m0ks5ke"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/falling_star.gd" id="1_fs"]
+[ext_resource type="Texture2D" uid="uid://gnal43lvmmc5" path="res://Bosses/Chairman/Attacks/Falling Star/Falling_star_sprite.png" id="2_stex"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st0"]
+atlas = ExtResource("2_stex")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st1"]
+atlas = ExtResource("2_stex")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st2"]
+atlas = ExtResource("2_stex")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st3"]
+atlas = ExtResource("2_stex")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st4"]
+atlas = ExtResource("2_stex")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st5"]
+atlas = ExtResource("2_stex")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st6"]
+atlas = ExtResource("2_stex")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st7"]
+atlas = ExtResource("2_stex")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_star"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st7")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_star"]
+radius = 13.0
+
+[node name="FallingStar" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_fs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.55, 0.55)
+sprite_frames = SubResource("SpriteFrames_star")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12, 12)
+shape = SubResource("CircleShape2D_star")

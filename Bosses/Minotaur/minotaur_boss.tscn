@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://cw76xl7j0b60t"]
+
+[ext_resource type="Texture2D" uid="uid://0ohq7p1f5j4t" path="res://tileset/gametilesets_1.png" id="1_ground"]
+[ext_resource type="PackedScene" uid="uid://ga4ao0p4cd17" path="res://player/player.tscn" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://d30h2maafel61" path="res://background/Pine Trees.png" id="3_pine"]
+[ext_resource type="Texture2D" uid="uid://borgdlvn4342p" path="res://background/Tree4.png" id="4_tree4"]
+[ext_resource type="Texture2D" uid="uid://dqw3wlod7kb6j" path="res://background/Weeping Willow3.png" id="5_willow"]
+[ext_resource type="PackedScene" uid="uid://cminotaurbss1" path="res://Bosses/Minotaur/minotaur.tscn" id="6_mino"]
+[ext_resource type="Script" uid="uid://c3e8rnd7n4fbm" path="res://Bosses/Minotaur/minotaur_room.gd" id="7_room"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jungle"]
+texture = ExtResource("1_ground")
+13:7/0 = 0
+13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:8/0 = 0
+13:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:9/0 = 0
+13:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:8/0 = 0
+14:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:7/0 = 0
+15:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:8/0 = 0
+15:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:9/0 = 0
+15:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:7/0 = 0
+16:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:8/0 = 0
+16:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_jungle"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_jungle")
+
+
+[sub_resource type="Gradient" id="Gradient_sky"]
+offsets = PackedFloat32Array(0, 0.45, 1)
+colors = PackedColorArray(0.05, 0.09, 0.11, 1, 0.09, 0.17, 0.16, 1, 0.16, 0.26, 0.2, 1)
+
+[sub_resource type="GradientTexture2D" id="GradTex_sky"]
+gradient = SubResource("Gradient_sky")
+width = 480
+height = 270
+fill_from = Vector2(0, 0)
+fill_to = Vector2(0, 1)
+
+[node name="MinotaurBoss" type="Node2D" unique_id=1773533253]
+script = ExtResource("7_room")
+
+[node name="Cielo" type="CanvasLayer" parent="." unique_id=1490874626]
+layer = -100
+
+[node name="Fondo" type="TextureRect" parent="Cielo"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource("GradTex_sky")
+expand_mode = 1
+stretch_mode = 1
+
+
+[node name="Fondos" type="Node2D" parent="."]
+
+[node name="MontanasLejanas" type="Polygon2D" parent="Fondos"]
+z_index = -55
+color = Color(0.11, 0.19, 0.19, 1)
+polygon = PackedVector2Array(90, 175, 180, -10, 330, 30, 470, -25, 620, 20, 780, -15, 930, 25, 1040, 175)
+
+[node name="MontanasCerca" type="Polygon2D" parent="Fondos"]
+z_index = -50
+color = Color(0.13, 0.24, 0.21, 1)
+polygon = PackedVector2Array(90, 175, 150, 60, 280, 20, 420, 70, 560, 25, 700, 65, 860, 20, 990, 60, 1040, 175)
+
+[node name="Niebla" type="Polygon2D" parent="Fondos"]
+z_index = -40
+color = Color(0.35, 0.5, 0.42, 0.22)
+polygon = PackedVector2Array(90, 100, 1040, 100, 1040, 175, 90, 175)
+
+[node name="Vegetacion" type="Node2D" parent="." unique_id=1869841451]
+
+[node name="Arbol0" type="Sprite2D" parent="Vegetacion" unique_id=1989691445]
+modulate = Color(0.3, 0.42, 0.38, 1)
+z_index = -30
+position = Vector2(250, 91.0)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_willow")
+region_enabled = true
+region_rect = Rect2(4, 4, 216, 184)
+
+[node name="Arbol1" type="Sprite2D" parent="Vegetacion" unique_id=1490363219]
+modulate = Color(0.3, 0.42, 0.38, 1)
+z_index = -30
+position = Vector2(560, 91.1)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_tree4")
+region_enabled = true
+region_rect = Rect2(1, 7, 254, 197)
+
+[node name="Arbol2" type="Sprite2D" parent="Vegetacion" unique_id=1211371874]
+modulate = Color(0.3, 0.42, 0.38, 1)
+z_index = -30
+position = Vector2(860, 95.6)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_willow")
+region_enabled = true
+region_rect = Rect2(4, 4, 216, 184)
+
+[node name="Arbol3" type="Sprite2D" parent="Vegetacion" unique_id=944485743]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(150, 63.4)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(97, 4, 93, 184)
+
+[node name="Arbol4" type="Sprite2D" parent="Vegetacion" unique_id=1298749896]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(340, 54.2)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(1, 4, 93, 184)
+
+[node name="Arbol5" type="Sprite2D" parent="Vegetacion" unique_id=1129533258]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(480, 72.6)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(97, 4, 93, 184)
+
+[node name="Arbol6" type="Sprite2D" parent="Vegetacion" unique_id=1623553570]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(655, 58.8)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(1, 4, 93, 184)
+
+[node name="Arbol7" type="Sprite2D" parent="Vegetacion" unique_id=978789500]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(800, 68.0)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(97, 4, 93, 184)
+
+[node name="Arbol8" type="Sprite2D" parent="Vegetacion" unique_id=231070092]
+modulate = Color(0.55, 0.68, 0.58, 1)
+z_index = -20
+position = Vector2(950, 63.4)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(1, 4, 93, 184)
+
+[node name="Arbol9" type="Sprite2D" parent="Vegetacion" unique_id=2080989750]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -10
+position = Vector2(265, 103.0)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(1, 4, 93, 184)
+
+[node name="Arbol10" type="Sprite2D" parent="Vegetacion" unique_id=877161335]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -10
+position = Vector2(600, 106.6)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(97, 4, 93, 184)
+
+[node name="Arbol11" type="Sprite2D" parent="Vegetacion" unique_id=44139146]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -10
+position = Vector2(890, 100.2)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(1, 4, 93, 184)
+
+[node name="Arbol12" type="Sprite2D" parent="Vegetacion" unique_id=2144515841]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -5
+position = Vector2(430, 109.0)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(194, 8, 28, 120)
+
+[node name="Arbol13" type="Sprite2D" parent="Vegetacion" unique_id=895756598]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -5
+position = Vector2(720, 122.6)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(418, 40, 28, 88)
+
+[node name="Arbol14" type="Sprite2D" parent="Vegetacion" unique_id=441816937]
+modulate = Color(0.8, 0.92, 0.8, 1)
+z_index = -5
+position = Vector2(200, 121.0)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("3_pine")
+region_enabled = true
+region_rect = Rect2(194, 8, 28, 120)
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1317830427]
+tile_set = SubResource("TileSet_jungle")
+format = 2
+layer_0/name = "Suelo"
+layer_0/tile_data = PackedInt32Array(655368, 851968, 7, 655369, 917504, 7, 655370, 983040, 7, 655371, 1048576, 7, 655372, 851968, 7, 655373, 917504, 7, 655374, 983040, 7, 655375, 1048576, 7, 655376, 851968, 7, 655377, 917504, 7, 655378, 983040, 7, 655379, 1048576, 7, 655380, 851968, 7, 655381, 917504, 7, 655382, 983040, 7, 655383, 1048576, 7, 655384, 851968, 7, 655385, 917504, 7, 655386, 983040, 7, 655387, 1048576, 7, 655388, 851968, 7, 655389, 917504, 7, 655390, 983040, 7, 655391, 1048576, 7, 655392, 851968, 7, 655393, 917504, 7, 655394, 983040, 7, 655395, 1048576, 7, 655396, 851968, 7, 655397, 917504, 7, 655398, 983040, 7, 655399, 1048576, 7, 655400, 851968, 7, 655401, 917504, 7, 655402, 983040, 7, 655403, 1048576, 7, 655404, 851968, 7, 655405, 917504, 7, 655406, 983040, 7, 655407, 1048576, 7, 655408, 851968, 7, 655409, 917504, 7, 655410, 983040, 7, 655411, 1048576, 7, 655412, 851968, 7, 655413, 917504, 7, 655414, 983040, 7, 655415, 1048576, 7, 655416, 851968, 7, 655417, 917504, 7, 655418, 983040, 7, 655419, 1048576, 7, 655420, 851968, 7, 655421, 917504, 7, 655422, 983040, 7, 720904, 851968, 8, 720905, 917504, 8, 720906, 983040, 8, 720907, 1048576, 8, 720908, 851968, 8, 720909, 917504, 8, 720910, 983040, 8, 720911, 1048576, 8, 720912, 851968, 8, 720913, 917504, 8, 720914, 983040, 8, 720915, 1048576, 8, 720916, 851968, 8, 720917, 917504, 8, 720918, 983040, 8, 720919, 1048576, 8, 720920, 851968, 8, 720921, 917504, 8, 720922, 983040, 8, 720923, 1048576, 8, 720924, 851968, 8, 720925, 917504, 8, 720926, 983040, 8, 720927, 1048576, 8, 720928, 851968, 8, 720929, 917504, 8, 720930, 983040, 8, 720931, 1048576, 8, 720932, 851968, 8, 720933, 917504, 8, 720934, 983040, 8, 720935, 1048576, 8, 720936, 851968, 8, 720937, 917504, 8, 720938, 983040, 8, 720939, 1048576, 8, 720940, 851968, 8, 720941, 917504, 8, 720942, 983040, 8, 720943, 1048576, 8, 720944, 851968, 8, 720945, 917504, 8, 720946, 983040, 8, 720947, 1048576, 8, 720948, 851968, 8, 720949, 917504, 8, 720950, 983040, 8, 720951, 1048576, 8, 720952, 851968, 8, 720953, 917504, 8, 720954, 983040, 8, 720955, 1048576, 8, 720956, 851968, 8, 720957, 917504, 8, 720958, 983040, 8, 786440, 851968, 9, 786441, 917504, 9, 786442, 983040, 9, 786443, 1048576, 9, 786444, 851968, 9, 786445, 917504, 9, 786446, 983040, 9, 786447, 1048576, 9, 786448, 851968, 9, 786449, 917504, 9, 786450, 983040, 9, 786451, 1048576, 9, 786452, 851968, 9, 786453, 917504, 9, 786454, 983040, 9, 786455, 1048576, 9, 786456, 851968, 9, 786457, 917504, 9, 786458, 983040, 9, 786459, 1048576, 9, 786460, 851968, 9, 786461, 917504, 9, 786462, 983040, 9, 786463, 1048576, 9, 786464, 851968, 9, 786465, 917504, 9, 786466, 983040, 9, 786467, 1048576, 9, 786468, 851968, 9, 786469, 917504, 9, 786470, 983040, 9, 786471, 1048576, 9, 786472, 851968, 9, 786473, 917504, 9, 786474, 983040, 9, 786475, 1048576, 9, 786476, 851968, 9, 786477, 917504, 9, 786478, 983040, 9, 786479, 1048576, 9, 786480, 851968, 9, 786481, 917504, 9, 786482, 983040, 9, 786483, 1048576, 9, 786484, 851968, 9, 786485, 917504, 9, 786486, 983040, 9, 786487, 1048576, 9, 786488, 851968, 9, 786489, 917504, 9, 786490, 983040, 9, 786491, 1048576, 9, 786492, 851968, 9, 786493, 917504, 9, 786494, 983040, 9, 851976, 851968, 8, 851977, 917504, 8, 851978, 983040, 8, 851979, 1048576, 8, 851980, 851968, 8, 851981, 917504, 8, 851982, 983040, 8, 851983, 1048576, 8, 851984, 851968, 8, 851985, 917504, 8, 851986, 983040, 8, 851987, 1048576, 8, 851988, 851968, 8, 851989, 917504, 8, 851990, 983040, 8, 851991, 1048576, 8, 851992, 851968, 8, 851993, 917504, 8, 851994, 983040, 8, 851995, 1048576, 8, 851996, 851968, 8, 851997, 917504, 8, 851998, 983040, 8, 851999, 1048576, 8, 852000, 851968, 8, 852001, 917504, 8, 852002, 983040, 8, 852003, 1048576, 8, 852004, 851968, 8, 852005, 917504, 8, 852006, 983040, 8, 852007, 1048576, 8, 852008, 851968, 8, 852009, 917504, 8, 852010, 983040, 8, 852011, 1048576, 8, 852012, 851968, 8, 852013, 917504, 8, 852014, 983040, 8, 852015, 1048576, 8, 852016, 851968, 8, 852017, 917504, 8, 852018, 983040, 8, 852019, 1048576, 8, 852020, 851968, 8, 852021, 917504, 8, 852022, 983040, 8, 852023, 1048576, 8, 852024, 851968, 8, 852025, 917504, 8, 852026, 983040, 8, 852027, 1048576, 8, 852028, 851968, 8, 852029, 917504, 8, 852030, 983040, 8, 917512, 851968, 9, 917513, 917504, 9, 917514, 983040, 9, 917515, 1048576, 9, 917516, 851968, 9, 917517, 917504, 9, 917518, 983040, 9, 917519, 1048576, 9, 917520, 851968, 9, 917521, 917504, 9, 917522, 983040, 9, 917523, 1048576, 9, 917524, 851968, 9, 917525, 917504, 9, 917526, 983040, 9, 917527, 1048576, 9, 917528, 851968, 9, 917529, 917504, 9, 917530, 983040, 9, 917531, 1048576, 9, 917532, 851968, 9, 917533, 917504, 9, 917534, 983040, 9, 917535, 1048576, 9, 917536, 851968, 9, 917537, 917504, 9, 917538, 983040, 9, 917539, 1048576, 9, 917540, 851968, 9, 917541, 917504, 9, 917542, 983040, 9, 917543, 1048576, 9, 917544, 851968, 9, 917545, 917504, 9, 917546, 983040, 9, 917547, 1048576, 9, 917548, 851968, 9, 917549, 917504, 9, 917550, 983040, 9, 917551, 1048576, 9, 917552, 851968, 9, 917553, 917504, 9, 917554, 983040, 9, 917555, 1048576, 9, 917556, 851968, 9, 917557, 917504, 9, 917558, 983040, 9, 917559, 1048576, 9, 917560, 851968, 9, 917561, 917504, 9, 917562, 983040, 9, 917563, 1048576, 9, 917564, 851968, 9, 917565, 917504, 9, 917566, 983040, 9, 65544, 917504, 8, 65598, 1048576, 8, 131080, 983040, 8, 131134, 851968, 8, 196616, 1048576, 8, 196670, 917504, 8, 262152, 851968, 8, 262206, 983040, 8, 327688, 917504, 8, 327742, 1048576, 8, 393224, 983040, 8, 393278, 851968, 8, 458760, 1048576, 8, 458814, 917504, 8, 524296, 851968, 8, 524350, 983040, 8, 589832, 917504, 8, 589886, 1048576, 8, 262162, 983040, 7, 262163, 1048576, 7, 262164, 851968, 7, 262165, 917504, 7, 262166, 983040, 7, 262167, 1048576, 7, 262168, 851968, 7, 262190, 983040, 7, 262191, 1048576, 7, 262192, 851968, 7, 262193, 917504, 7, 262194, 983040, 7, 262195, 1048576, 7, 262196, 851968, 7, 65567, 1048576, 7, 65568, 851968, 7, 65569, 917504, 7, 65570, 983040, 7, 65571, 1048576, 7, 65572, 851968, 7, 65573, 917504, 7, 65574, 983040, 7, 65575, 1048576, 7)
+
+[node name="Player" parent="." unique_id=1331532619 instance=ExtResource("2_player")]
+position = Vector2(200, 150)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1633219758]
+
+[node name="Minotaur" parent="." unique_id=1990715993 instance=ExtResource("6_mino")]
+position = Vector2(880, 160)
+max_hits = 12

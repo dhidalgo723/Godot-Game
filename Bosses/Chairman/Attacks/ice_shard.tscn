@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://0prg0d7oqkrq"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/ice_shard.gd" id="1_ice"]
+[ext_resource type="Texture2D" uid="uid://duvr1hyyqv6ov" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-1.png" id="2_i1"]
+[ext_resource type="Texture2D" uid="uid://d2t7fdjndm74u" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-2.png" id="3_i2"]
+[ext_resource type="Texture2D" uid="uid://j24yhhs5dlsl" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-3.png" id="4_i3"]
+[ext_resource type="Texture2D" uid="uid://cid612vw7cjpx" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-4.png" id="5_i4"]
+[ext_resource type="Texture2D" uid="uid://djgps6xx1asl" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-5.png" id="6_i5"]
+[ext_resource type="Texture2D" uid="uid://clxxthgs737ic" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-6.png" id="7_i6"]
+[ext_resource type="Texture2D" uid="uid://bl7ip66sa6pq3" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-7.png" id="8_i7"]
+[ext_resource type="Texture2D" uid="uid://du8v4as3lvkak" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-8.png" id="9_i8"]
+[ext_resource type="Texture2D" uid="uid://dws5h3gi4legc" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-9.png" id="10_i9"]
+[ext_resource type="Texture2D" uid="uid://diff4mvlh0ihp" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-10.png" id="11_i10"]
+[ext_resource type="Texture2D" uid="uid://rdbydhp47oii" path="res://Bosses/Chairman/Attacks/Ice Shard/I5050-11.png" id="12_i11"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ice"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i4")
+}],
+"loop": true,
+"name": &"form",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i6")
+}],
+"loop": false,
+"name": &"fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_i7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_i10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i11")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ice"]
+radius = 10.0
+
+[node name="IceShard" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_ice")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -1.5707964
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_ice")
+animation = &"form"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ice")
