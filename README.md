@@ -1,6 +1,6 @@
 # Godot Game — Caballero pisos
 
-Plataformas 2D hecho con **Godot 4.6**.
+Plataformas 2D hecho con **Godot 4.6**. Es un juego no hecho para la distribución, solo para el consumo personal sin ánimo de lucro.
 
 ## Cómo abrirlo
 
