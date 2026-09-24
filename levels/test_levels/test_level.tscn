@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://cj7thnbm33oui"]
 
-[ext_resource type="PackedScene" path="res://player/player.tscn" id="pl"]
-[ext_resource type="PackedScene" path="res://levels/portal.tscn" id="portal"]
-[ext_resource type="PackedScene" path="res://checkpoints/checkpoint.tscn" id="ckpt"]
-[ext_resource type="Texture2D" path="res://tileset/GUI/fantasy.png" id="gui"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/oak_woods_tileset.png" id="oak"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/background/background_layer_1.png" id="bg1"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/background/background_layer_2.png" id="bg2"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/background/background_layer_3.png" id="bg3"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/grass_1.png" id="grass1"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/grass_2.png" id="grass2"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/grass_3.png" id="grass3"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/rock_1.png" id="rock1"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/rock_2.png" id="rock2"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/rock_3.png" id="rock3"]
-[ext_resource type="Texture2D" path="res://tileset/Forest/decorations/lamp.png" id="lamp"]
+[ext_resource type="Texture2D" uid="uid://hkdj156qdh11" path="res://tileset/Forest/background/background_layer_1.png" id="bg1"]
+[ext_resource type="Texture2D" uid="uid://c8kux8wmb8evu" path="res://tileset/Forest/background/background_layer_2.png" id="bg2"]
+[ext_resource type="Texture2D" uid="uid://b83tilg7eo0vr" path="res://tileset/Forest/background/background_layer_3.png" id="bg3"]
+[ext_resource type="PackedScene" uid="uid://dqx3m0vp8ka2f" path="res://checkpoints/checkpoint.tscn" id="ckpt"]
+[ext_resource type="Texture2D" uid="uid://cvxkt7x8udy14" path="res://tileset/Forest/decorations/grass_1.png" id="grass1"]
+[ext_resource type="Texture2D" uid="uid://cwiktux7fcpwr" path="res://tileset/Forest/decorations/grass_2.png" id="grass2"]
+[ext_resource type="Texture2D" uid="uid://cug42nrw35tm" path="res://tileset/Forest/decorations/grass_3.png" id="grass3"]
+[ext_resource type="Texture2D" uid="uid://cflh8xqt1kxtf" path="res://tileset/GUI/fantasy.png" id="gui"]
+[ext_resource type="Texture2D" uid="uid://bqeyv5mnxvj4j" path="res://tileset/Forest/decorations/lamp.png" id="lamp"]
+[ext_resource type="Texture2D" uid="uid://kt57hioaeh4k" path="res://tileset/Forest/oak_woods_tileset.png" id="oak"]
+[ext_resource type="PackedScene" uid="uid://ga4ao0p4cd17" path="res://player/player.tscn" id="pl"]
+[ext_resource type="PackedScene" uid="uid://cportaldim01" path="res://levels/portal.tscn" id="portal"]
+[ext_resource type="Texture2D" uid="uid://6sc7dvkxnqka" path="res://tileset/Forest/decorations/rock_1.png" id="rock1"]
+[ext_resource type="Texture2D" uid="uid://buqj1bgvset5c" path="res://tileset/Forest/decorations/rock_2.png" id="rock2"]
+[ext_resource type="Texture2D" uid="uid://ci42l74gc5s2s" path="res://tileset/Forest/decorations/rock_3.png" id="rock3"]
 
 [sub_resource type="TileSetAtlasSource" id="Atlas_oak"]
 texture = ExtResource("oak")
@@ -55,421 +55,421 @@ tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("Atlas_oak")
 
-[node name="Test Level" type="Node2D"]
+[node name="Test Level" type="Node2D" unique_id=959406393]
 
-[node name="Fondo" type="Node2D" parent="."]
+[node name="Fondo" type="Node2D" parent="." unique_id=541093875]
 
-[node name="Capa1" type="Parallax2D" parent="Fondo"]
+[node name="Capa1" type="Parallax2D" parent="Fondo" unique_id=36586930]
 z_index = -100
 scroll_scale = Vector2(0.15, 1)
 repeat_size = Vector2(768, 0)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa1"]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa1" unique_id=1082918255]
 position = Vector2(-400, -224)
 scale = Vector2(2.4, 2.4)
-centered = false
 texture = ExtResource("bg1")
+centered = false
 
-[node name="Capa2" type="Parallax2D" parent="Fondo"]
+[node name="Capa2" type="Parallax2D" parent="Fondo" unique_id=1884542857]
 z_index = -90
 scroll_scale = Vector2(0.4, 1)
 repeat_size = Vector2(768, 0)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa2"]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa2" unique_id=1665847263]
 position = Vector2(-400, -224)
 scale = Vector2(2.4, 2.4)
-centered = false
 texture = ExtResource("bg2")
+centered = false
 
-[node name="Capa3" type="Parallax2D" parent="Fondo"]
+[node name="Capa3" type="Parallax2D" parent="Fondo" unique_id=1857668100]
 z_index = -80
 scroll_scale = Vector2(0.7, 1)
 repeat_size = Vector2(768, 0)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa3"]
+[node name="Sprite2D" type="Sprite2D" parent="Fondo/Capa3" unique_id=941479727]
 position = Vector2(-400, -224)
 scale = Vector2(2.4, 2.4)
-centered = false
 texture = ExtResource("bg3")
+centered = false
 
-[node name="Decoracion" type="Node2D" parent="."]
+[node name="Decoracion" type="Node2D" parent="." unique_id=1202144297]
 
-[node name="Hierba1" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba1" type="Sprite2D" parent="Decoracion" unique_id=192495978]
 z_index = 2
-position = Vector2(60.0, 166.0)
+position = Vector2(60, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba2" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba2" type="Sprite2D" parent="Decoracion" unique_id=1210215021]
 z_index = 2
-position = Vector2(73.0, 166.0)
+position = Vector2(73, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba3" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba3" type="Sprite2D" parent="Decoracion" unique_id=1484647181]
 z_index = 2
-position = Vector2(91.0, 166.0)
+position = Vector2(91, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba4" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba4" type="Sprite2D" parent="Decoracion" unique_id=1589041095]
 z_index = 2
-position = Vector2(101.0, 166.0)
+position = Vector2(101, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba5" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba5" type="Sprite2D" parent="Decoracion" unique_id=1446445566]
 z_index = 2
-position = Vector2(116.0, 166.0)
+position = Vector2(116, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba6" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba6" type="Sprite2D" parent="Decoracion" unique_id=204320943]
 z_index = 2
-position = Vector2(136.0, 166.0)
+position = Vector2(136, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba7" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba7" type="Sprite2D" parent="Decoracion" unique_id=62652196]
 z_index = 2
-position = Vector2(151.0, 166.0)
+position = Vector2(151, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba8" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba8" type="Sprite2D" parent="Decoracion" unique_id=680485935]
 z_index = 2
-position = Vector2(171.0, 166.0)
+position = Vector2(171, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba9" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba9" type="Sprite2D" parent="Decoracion" unique_id=988759427]
 z_index = 2
-position = Vector2(188.0, 166.0)
+position = Vector2(188, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba10" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba10" type="Sprite2D" parent="Decoracion" unique_id=1167982717]
 z_index = 2
-position = Vector2(202.0, 166.0)
+position = Vector2(202, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba11" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba11" type="Sprite2D" parent="Decoracion" unique_id=1097664652]
 z_index = 2
-position = Vector2(214.0, 166.0)
+position = Vector2(214, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba12" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba12" type="Sprite2D" parent="Decoracion" unique_id=1341944483]
 z_index = 2
-position = Vector2(230.0, 166.0)
+position = Vector2(230, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba13" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba13" type="Sprite2D" parent="Decoracion" unique_id=1767736754]
 z_index = 2
-position = Vector2(250.0, 166.0)
+position = Vector2(250, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba14" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba14" type="Sprite2D" parent="Decoracion" unique_id=2078948419]
 z_index = 2
-position = Vector2(260.0, 166.0)
+position = Vector2(260, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba15" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba15" type="Sprite2D" parent="Decoracion" unique_id=1009438954]
 z_index = 2
-position = Vector2(277.0, 166.0)
+position = Vector2(277, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba16" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba16" type="Sprite2D" parent="Decoracion" unique_id=780021074]
 z_index = 2
-position = Vector2(292.0, 166.0)
+position = Vector2(292, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba17" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba17" type="Sprite2D" parent="Decoracion" unique_id=1333865499]
 z_index = 2
-position = Vector2(308.0, 166.0)
+position = Vector2(308, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba18" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba18" type="Sprite2D" parent="Decoracion" unique_id=2043933543]
 z_index = 2
-position = Vector2(331.0, 166.0)
+position = Vector2(331, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba19" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba19" type="Sprite2D" parent="Decoracion" unique_id=1185582537]
 z_index = 2
-position = Vector2(346.0, 166.0)
+position = Vector2(346, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba20" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba20" type="Sprite2D" parent="Decoracion" unique_id=1219891790]
 z_index = 2
-position = Vector2(362.0, 166.0)
+position = Vector2(362, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba21" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba21" type="Sprite2D" parent="Decoracion" unique_id=817389618]
 z_index = 2
-position = Vector2(379.0, 166.0)
+position = Vector2(379, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba22" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba22" type="Sprite2D" parent="Decoracion" unique_id=1165341216]
 z_index = 2
-position = Vector2(393.0, 166.0)
+position = Vector2(393, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba23" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba23" type="Sprite2D" parent="Decoracion" unique_id=1663011144]
 z_index = 2
-position = Vector2(404.0, 166.0)
+position = Vector2(404, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba24" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba24" type="Sprite2D" parent="Decoracion" unique_id=864590538]
 z_index = 2
-position = Vector2(427.0, 166.0)
+position = Vector2(427, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba25" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba25" type="Sprite2D" parent="Decoracion" unique_id=1040137732]
 z_index = 2
-position = Vector2(440.0, 166.0)
+position = Vector2(440, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba26" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba26" type="Sprite2D" parent="Decoracion" unique_id=1069743072]
 z_index = 2
-position = Vector2(458.0, 166.0)
+position = Vector2(458, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba27" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba27" type="Sprite2D" parent="Decoracion" unique_id=1288802536]
 z_index = 2
-position = Vector2(472.0, 166.0)
+position = Vector2(472, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba28" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba28" type="Sprite2D" parent="Decoracion" unique_id=7916013]
 z_index = 2
-position = Vector2(492.0, 166.0)
+position = Vector2(492, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba29" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba29" type="Sprite2D" parent="Decoracion" unique_id=667072145]
 z_index = 2
-position = Vector2(505.0, 166.0)
+position = Vector2(505, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba30" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba30" type="Sprite2D" parent="Decoracion" unique_id=2076446881]
 z_index = 2
-position = Vector2(522.0, 166.0)
+position = Vector2(522, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba31" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba31" type="Sprite2D" parent="Decoracion" unique_id=531791549]
 z_index = 2
-position = Vector2(535.0, 166.0)
+position = Vector2(535, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba32" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba32" type="Sprite2D" parent="Decoracion" unique_id=1476771317]
 z_index = 2
-position = Vector2(548.0, 166.0)
+position = Vector2(548, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba33" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba33" type="Sprite2D" parent="Decoracion" unique_id=1196196079]
 z_index = 2
-position = Vector2(566.0, 166.0)
+position = Vector2(566, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba34" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba34" type="Sprite2D" parent="Decoracion" unique_id=2067362854]
 z_index = 2
-position = Vector2(585.0, 166.0)
+position = Vector2(585, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba35" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba35" type="Sprite2D" parent="Decoracion" unique_id=546050701]
 z_index = 2
-position = Vector2(597.0, 166.0)
+position = Vector2(597, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba36" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba36" type="Sprite2D" parent="Decoracion" unique_id=392113844]
 z_index = 2
-position = Vector2(615.0, 166.0)
+position = Vector2(615, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba37" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba37" type="Sprite2D" parent="Decoracion" unique_id=925746690]
 z_index = 2
-position = Vector2(632.0, 166.0)
+position = Vector2(632, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba38" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba38" type="Sprite2D" parent="Decoracion" unique_id=941665912]
 z_index = 2
-position = Vector2(645.0, 166.0)
+position = Vector2(645, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba39" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba39" type="Sprite2D" parent="Decoracion" unique_id=2074140277]
 z_index = 2
-position = Vector2(667.0, 166.0)
+position = Vector2(667, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba40" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba40" type="Sprite2D" parent="Decoracion" unique_id=422161708]
 z_index = 2
-position = Vector2(683.0, 166.0)
+position = Vector2(683, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba41" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba41" type="Sprite2D" parent="Decoracion" unique_id=1118490877]
 z_index = 2
-position = Vector2(697.0, 166.0)
+position = Vector2(697, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba42" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba42" type="Sprite2D" parent="Decoracion" unique_id=295531587]
 z_index = 2
-position = Vector2(714.0, 166.0)
+position = Vector2(714, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba43" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba43" type="Sprite2D" parent="Decoracion" unique_id=1041984443]
 z_index = 2
-position = Vector2(724.0, 166.0)
+position = Vector2(724, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba44" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba44" type="Sprite2D" parent="Decoracion" unique_id=1386373136]
 z_index = 2
-position = Vector2(746.0, 166.0)
+position = Vector2(746, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba45" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba45" type="Sprite2D" parent="Decoracion" unique_id=1679139957]
 z_index = 2
-position = Vector2(757.0, 166.0)
+position = Vector2(757, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba46" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba46" type="Sprite2D" parent="Decoracion" unique_id=1765906981]
 z_index = 2
-position = Vector2(772.0, 166.0)
+position = Vector2(772, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba47" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba47" type="Sprite2D" parent="Decoracion" unique_id=229056527]
 z_index = 2
-position = Vector2(793.0, 166.0)
+position = Vector2(793, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba48" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba48" type="Sprite2D" parent="Decoracion" unique_id=1423935406]
 z_index = 2
-position = Vector2(808.0, 166.0)
+position = Vector2(808, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba49" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba49" type="Sprite2D" parent="Decoracion" unique_id=662808218]
 z_index = 2
-position = Vector2(823.0, 166.0)
+position = Vector2(823, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba50" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba50" type="Sprite2D" parent="Decoracion" unique_id=719968573]
 z_index = 2
-position = Vector2(840.0, 166.0)
+position = Vector2(840, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba51" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba51" type="Sprite2D" parent="Decoracion" unique_id=1135043265]
 z_index = 2
-position = Vector2(853.0, 166.0)
+position = Vector2(853, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba52" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba52" type="Sprite2D" parent="Decoracion" unique_id=1680579831]
 z_index = 2
-position = Vector2(876.0, 166.0)
+position = Vector2(876, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba53" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba53" type="Sprite2D" parent="Decoracion" unique_id=868614565]
 z_index = 2
-position = Vector2(887.0, 166.0)
+position = Vector2(887, 166)
 texture = ExtResource("grass1")
 
-[node name="Hierba54" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba54" type="Sprite2D" parent="Decoracion" unique_id=875700056]
 z_index = 2
-position = Vector2(904.0, 166.0)
+position = Vector2(904, 166)
 texture = ExtResource("grass2")
 
-[node name="Hierba55" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba55" type="Sprite2D" parent="Decoracion" unique_id=352314660]
 z_index = 2
-position = Vector2(920.0, 166.0)
+position = Vector2(920, 166)
 texture = ExtResource("grass3")
 
-[node name="Hierba56" type="Sprite2D" parent="Decoracion"]
+[node name="Hierba56" type="Sprite2D" parent="Decoracion" unique_id=1943535451]
 z_index = 2
-position = Vector2(932.0, 166.0)
+position = Vector2(932, 166)
 texture = ExtResource("grass1")
 
-[node name="Roca57" type="Sprite2D" parent="Decoracion"]
+[node name="Roca57" type="Sprite2D" parent="Decoracion" unique_id=621687404]
 z_index = 1
-position = Vector2(150.0, 161.0)
+position = Vector2(150, 161)
 texture = ExtResource("rock2")
 
-[node name="Roca58" type="Sprite2D" parent="Decoracion"]
+[node name="Roca58" type="Sprite2D" parent="Decoracion" unique_id=992246229]
 z_index = 1
-position = Vector2(360.0, 161.0)
+position = Vector2(360, 161)
 texture = ExtResource("rock1")
 
-[node name="Roca59" type="Sprite2D" parent="Decoracion"]
+[node name="Roca59" type="Sprite2D" parent="Decoracion" unique_id=1602327161]
 z_index = 1
-position = Vector2(540.0, 161.0)
+position = Vector2(540, 161)
 texture = ExtResource("rock3")
 
-[node name="Roca60" type="Sprite2D" parent="Decoracion"]
+[node name="Roca60" type="Sprite2D" parent="Decoracion" unique_id=1301845583]
 z_index = 1
-position = Vector2(720.0, 161.0)
+position = Vector2(720, 161)
 texture = ExtResource("rock1")
 
-[node name="Roca61" type="Sprite2D" parent="Decoracion"]
+[node name="Roca61" type="Sprite2D" parent="Decoracion" unique_id=1703612499]
 z_index = 1
-position = Vector2(905.0, 161.0)
+position = Vector2(905, 161)
 texture = ExtResource("rock2")
 
-[node name="Luz62" type="Polygon2D" parent="Decoracion"]
+[node name="Luz62" type="Polygon2D" parent="Decoracion" unique_id=640234627]
 z_index = -2
-color = Color(1, 0.75, 0.35, 0.10)
+color = Color(1, 0.75, 0.35, 0.1)
 polygon = PackedVector2Array(220, 118, 218.042, 130.361, 212.361, 141.511, 203.511, 150.361, 192.361, 156.042, 180, 158, 167.639, 156.042, 156.489, 150.361, 147.639, 141.511, 141.958, 130.361, 140, 118, 141.958, 105.639, 147.639, 94.4886, 156.489, 85.6393, 167.639, 79.9577, 180, 78, 192.361, 79.9577, 203.511, 85.6393, 212.361, 94.4886, 218.042, 105.639)
 
-[node name="Farola63" type="Sprite2D" parent="Decoracion"]
+[node name="Farola63" type="Sprite2D" parent="Decoracion" unique_id=879032359]
 z_index = -1
-position = Vector2(180.0, 140.0)
+position = Vector2(180, 140)
 texture = ExtResource("lamp")
 
-[node name="Luz64" type="Polygon2D" parent="Decoracion"]
+[node name="Luz64" type="Polygon2D" parent="Decoracion" unique_id=1586660958]
 z_index = -2
-color = Color(1, 0.75, 0.35, 0.10)
+color = Color(1, 0.75, 0.35, 0.1)
 polygon = PackedVector2Array(400, 118, 398.042, 130.361, 392.361, 141.511, 383.511, 150.361, 372.361, 156.042, 360, 158, 347.639, 156.042, 336.489, 150.361, 327.639, 141.511, 321.958, 130.361, 320, 118, 321.958, 105.639, 327.639, 94.4886, 336.489, 85.6393, 347.639, 79.9577, 360, 78, 372.361, 79.9577, 383.511, 85.6393, 392.361, 94.4886, 398.042, 105.639)
 
-[node name="Farola65" type="Sprite2D" parent="Decoracion"]
+[node name="Farola65" type="Sprite2D" parent="Decoracion" unique_id=179054611]
 z_index = -1
-position = Vector2(360.0, 140.0)
+position = Vector2(360, 140)
 texture = ExtResource("lamp")
 
-[node name="Luz66" type="Polygon2D" parent="Decoracion"]
+[node name="Luz66" type="Polygon2D" parent="Decoracion" unique_id=787962645]
 z_index = -2
-color = Color(1, 0.75, 0.35, 0.10)
+color = Color(1, 0.75, 0.35, 0.1)
 polygon = PackedVector2Array(580, 118, 578.042, 130.361, 572.361, 141.511, 563.511, 150.361, 552.361, 156.042, 540, 158, 527.639, 156.042, 516.489, 150.361, 507.639, 141.511, 501.958, 130.361, 500, 118, 501.958, 105.639, 507.639, 94.4886, 516.489, 85.6393, 527.639, 79.9577, 540, 78, 552.361, 79.9577, 563.511, 85.6393, 572.361, 94.4886, 578.042, 105.639)
 
-[node name="Farola67" type="Sprite2D" parent="Decoracion"]
+[node name="Farola67" type="Sprite2D" parent="Decoracion" unique_id=2034324344]
 z_index = -1
-position = Vector2(540.0, 140.0)
+position = Vector2(540, 140)
 texture = ExtResource("lamp")
 
-[node name="Luz68" type="Polygon2D" parent="Decoracion"]
+[node name="Luz68" type="Polygon2D" parent="Decoracion" unique_id=1080954250]
 z_index = -2
-color = Color(1, 0.75, 0.35, 0.10)
+color = Color(1, 0.75, 0.35, 0.1)
 polygon = PackedVector2Array(760, 118, 758.042, 130.361, 752.361, 141.511, 743.511, 150.361, 732.361, 156.042, 720, 158, 707.639, 156.042, 696.489, 150.361, 687.639, 141.511, 681.958, 130.361, 680, 118, 681.958, 105.639, 687.639, 94.4886, 696.489, 85.6393, 707.639, 79.9577, 720, 78, 732.361, 79.9577, 743.511, 85.6393, 752.361, 94.4886, 758.042, 105.639)
 
-[node name="Farola69" type="Sprite2D" parent="Decoracion"]
+[node name="Farola69" type="Sprite2D" parent="Decoracion" unique_id=2031317308]
 z_index = -1
-position = Vector2(720.0, 140.0)
+position = Vector2(720, 140)
 texture = ExtResource("lamp")
 
-[node name="Luz70" type="Polygon2D" parent="Decoracion"]
+[node name="Luz70" type="Polygon2D" parent="Decoracion" unique_id=686384143]
 z_index = -2
-color = Color(1, 0.75, 0.35, 0.10)
+color = Color(1, 0.75, 0.35, 0.1)
 polygon = PackedVector2Array(940, 118, 938.042, 130.361, 932.361, 141.511, 923.511, 150.361, 912.361, 156.042, 900, 158, 887.639, 156.042, 876.489, 150.361, 867.639, 141.511, 861.958, 130.361, 860, 118, 861.958, 105.639, 867.639, 94.4886, 876.489, 85.6393, 887.639, 79.9577, 900, 78, 912.361, 79.9577, 923.511, 85.6393, 932.361, 94.4886, 938.042, 105.639)
 
-[node name="Farola71" type="Sprite2D" parent="Decoracion"]
+[node name="Farola71" type="Sprite2D" parent="Decoracion" unique_id=1903566631]
 z_index = -1
-position = Vector2(900.0, 140.0)
+position = Vector2(900, 140)
 texture = ExtResource("lamp")
 
-[node name="Portales" type="Node2D" parent="."]
+[node name="Portales" type="Node2D" parent="." unique_id=757985646]
 
-[node name="Poste72" type="Polygon2D" parent="Portales"]
+[node name="Poste72" type="Polygon2D" parent="Portales" unique_id=1198481274]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(233, 168, 239, 168, 239, 66, 233, 66)
 
-[node name="Poste73" type="Polygon2D" parent="Portales"]
+[node name="Poste73" type="Polygon2D" parent="Portales" unique_id=507269601]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(301, 168, 307, 168, 307, 66, 301, 66)
 
-[node name="Brillo74" type="Polygon2D" parent="Portales"]
+[node name="Brillo74" type="Polygon2D" parent="Portales" unique_id=1628669742]
 z_index = -2
 color = Color(0.45, 1, 0.55, 0.08)
 polygon = PackedVector2Array(304, 128, 302.336, 138.507, 297.507, 147.985, 289.985, 155.507, 280.507, 160.336, 270, 162, 259.493, 160.336, 250.015, 155.507, 242.493, 147.985, 237.664, 138.507, 236, 128, 237.664, 117.493, 242.493, 108.015, 250.015, 100.493, 259.493, 95.6641, 270, 94, 280.507, 95.6641, 289.985, 100.493, 297.507, 108.015, 302.336, 117.493)
 
-[node name="Letrero0" type="NinePatchRect" parent="Portales"]
+[node name="Letrero0" type="NinePatchRect" parent="Portales" unique_id=1236620417]
 offset_left = 229.0
 offset_top = 56.0
 offset_right = 311.0
@@ -481,8 +481,8 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Texto" type="Label" parent="Portales/Letrero0"]
-anchors_preset = 15
+[node name="Texto" type="Label" parent="Portales/Letrero0" unique_id=991938020]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_colors/font_color = Color(1, 0.85, 0.6, 1)
@@ -493,26 +493,26 @@ text = "CHAIRMAN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PortalChairman" parent="Portales" instance=ExtResource("portal")]
+[node name="PortalChairman" parent="Portales" unique_id=509101309 instance=ExtResource("portal")]
 position = Vector2(270, 140)
 target_scene = "res://levels/chairman_boss.tscn"
 
-[node name="Poste75" type="Polygon2D" parent="Portales"]
+[node name="Poste75" type="Polygon2D" parent="Portales" unique_id=2058845370]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(413, 168, 419, 168, 419, 66, 413, 66)
 
-[node name="Poste76" type="Polygon2D" parent="Portales"]
+[node name="Poste76" type="Polygon2D" parent="Portales" unique_id=328089248]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(481, 168, 487, 168, 487, 66, 481, 66)
 
-[node name="Brillo77" type="Polygon2D" parent="Portales"]
+[node name="Brillo77" type="Polygon2D" parent="Portales" unique_id=415870149]
 z_index = -2
 color = Color(0.45, 1, 0.55, 0.08)
 polygon = PackedVector2Array(484, 128, 482.336, 138.507, 477.507, 147.985, 469.985, 155.507, 460.507, 160.336, 450, 162, 439.493, 160.336, 430.015, 155.507, 422.493, 147.985, 417.664, 138.507, 416, 128, 417.664, 117.493, 422.493, 108.015, 430.015, 100.493, 439.493, 95.6641, 450, 94, 460.507, 95.6641, 469.985, 100.493, 477.507, 108.015, 482.336, 117.493)
 
-[node name="Letrero1" type="NinePatchRect" parent="Portales"]
+[node name="Letrero1" type="NinePatchRect" parent="Portales" unique_id=1583197178]
 offset_left = 406.0
 offset_top = 56.0
 offset_right = 494.0
@@ -524,8 +524,8 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Texto" type="Label" parent="Portales/Letrero1"]
-anchors_preset = 15
+[node name="Texto" type="Label" parent="Portales/Letrero1" unique_id=763280626]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_colors/font_color = Color(0.9, 0.75, 1, 1)
@@ -536,26 +536,26 @@ text = "MINOTAURO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PortalMinotauro" parent="Portales" instance=ExtResource("portal")]
+[node name="PortalMinotauro" parent="Portales" unique_id=236275135 instance=ExtResource("portal")]
 position = Vector2(450, 140)
 target_scene = "res://Bosses/Minotaur/minotaur_boss.tscn"
 
-[node name="Poste78" type="Polygon2D" parent="Portales"]
+[node name="Poste78" type="Polygon2D" parent="Portales" unique_id=1424690985]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(593, 168, 599, 168, 599, 66, 593, 66)
 
-[node name="Poste79" type="Polygon2D" parent="Portales"]
+[node name="Poste79" type="Polygon2D" parent="Portales" unique_id=1973384764]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(661, 168, 667, 168, 667, 66, 661, 66)
 
-[node name="Brillo80" type="Polygon2D" parent="Portales"]
+[node name="Brillo80" type="Polygon2D" parent="Portales" unique_id=1604957680]
 z_index = -2
 color = Color(0.45, 1, 0.55, 0.08)
 polygon = PackedVector2Array(664, 128, 662.336, 138.507, 657.507, 147.985, 649.985, 155.507, 640.507, 160.336, 630, 162, 619.493, 160.336, 610.015, 155.507, 602.493, 147.985, 597.664, 138.507, 596, 128, 597.664, 117.493, 602.493, 108.015, 610.015, 100.493, 619.493, 95.6641, 630, 94, 640.507, 95.6641, 649.985, 100.493, 657.507, 108.015, 662.336, 117.493)
 
-[node name="Letrero2" type="NinePatchRect" parent="Portales"]
+[node name="Letrero2" type="NinePatchRect" parent="Portales" unique_id=1147126811]
 offset_left = 591.0
 offset_top = 56.0
 offset_right = 669.0
@@ -567,38 +567,38 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Texto" type="Label" parent="Portales/Letrero2"]
-anchors_preset = 15
+[node name="Texto" type="Label" parent="Portales/Letrero2" unique_id=1839724413]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_colors/font_color = Color(0.75, 1, 0.7, 1)
 theme_override_colors/font_outline_color = Color(0.2, 0.1, 0.04, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 10
-text = "SHAIA"
+text = "CHITSU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PortalShaia" parent="Portales" instance=ExtResource("portal")]
+[node name="PortalShaia" parent="Portales" unique_id=1937878918 instance=ExtResource("portal")]
 position = Vector2(630, 140)
-target_scene = "res://Bosses/Shaia/shaia_boss.tscn"
+target_scene = "res://Bosses/Chitsu/chitsu_boss.tscn"
 
-[node name="Poste81" type="Polygon2D" parent="Portales"]
+[node name="Poste81" type="Polygon2D" parent="Portales" unique_id=49766389]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(773, 168, 779, 168, 779, 66, 773, 66)
 
-[node name="Poste82" type="Polygon2D" parent="Portales"]
+[node name="Poste82" type="Polygon2D" parent="Portales" unique_id=927635027]
 z_index = -1
 color = Color(0.36, 0.22, 0.13, 1)
 polygon = PackedVector2Array(841, 168, 847, 168, 847, 66, 841, 66)
 
-[node name="Brillo83" type="Polygon2D" parent="Portales"]
+[node name="Brillo83" type="Polygon2D" parent="Portales" unique_id=1461026499]
 z_index = -2
 color = Color(0.45, 1, 0.55, 0.08)
 polygon = PackedVector2Array(844, 128, 842.336, 138.507, 837.507, 147.985, 829.985, 155.507, 820.507, 160.336, 810, 162, 799.493, 160.336, 790.015, 155.507, 782.493, 147.985, 777.664, 138.507, 776, 128, 777.664, 117.493, 782.493, 108.015, 790.015, 100.493, 799.493, 95.6641, 810, 94, 820.507, 95.6641, 829.985, 100.493, 837.507, 108.015, 842.336, 117.493)
 
-[node name="Letrero3" type="NinePatchRect" parent="Portales"]
+[node name="Letrero3" type="NinePatchRect" parent="Portales" unique_id=1462415713]
 offset_left = 771.0
 offset_top = 56.0
 offset_right = 849.0
@@ -610,8 +610,8 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Texto" type="Label" parent="Portales/Letrero3"]
-anchors_preset = 15
+[node name="Texto" type="Label" parent="Portales/Letrero3" unique_id=2115231108]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_colors/font_color = Color(1, 0.7, 0.5, 1)
@@ -622,25 +622,25 @@ text = "KIN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PortalKin" parent="Portales" instance=ExtResource("portal")]
+[node name="PortalKin" parent="Portales" unique_id=306730882 instance=ExtResource("portal")]
 position = Vector2(810, 140)
 target_scene = "res://Bosses/Dragon/kin_boss.tscn"
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=1316726029]
 tile_set = SubResource("TileSet_oak")
 format = 2
 layer_0/name = "Suelo"
 layer_0/tile_data = PackedInt32Array(-458752, 0, 0, -393216, 0, 1, -327680, 0, 2, -262144, 0, 1, -196608, 0, 2, -131072, 0, 1, -65536, 0, 2, 0, 0, 1, 65536, 0, 2, 131072, 0, 1, 196608, 0, 2, 262144, 0, 1, 327680, 0, 2, 393216, 0, 1, 458752, 0, 2, 524288, 0, 1, 589824, 0, 2, 655360, 0, 1, 720896, 0, 2, 786432, 0, 1, 851968, 0, 2, 917504, 0, 1, 983040, 0, 3, -458751, 196608, 0, -393215, 196608, 1, -327679, 196608, 2, -262143, 196608, 1, -196607, 196608, 2, -131071, 196608, 1, -65535, 196608, 2, 1, 196608, 1, 65537, 196608, 2, 131073, 196608, 1, 196609, 196608, 2, 262145, 196608, 1, 327681, 196608, 2, 393217, 196608, 1, 458753, 65536, 1, 524289, 131072, 13, 589825, 65536, 1, 655361, 65536, 12, 720897, 65536, 1, 786433, 65536, 1, 851969, 65536, 1, 917505, 65536, 1, 983041, 131072, 3, 458754, 65536, 0, 524290, 65536, 1, 589826, 65536, 1, 655362, 65536, 1, 720898, 65536, 1, 786434, 65536, 1, 851970, 65536, 1, 917506, 131072, 13, 983042, 65536, 3, 458755, 131072, 0, 524291, 65536, 1, 589827, 131072, 13, 655363, 65536, 1, 720899, 65536, 12, 786435, 65536, 1, 851971, 65536, 1, 917507, 65536, 1, 983043, 131072, 3, 458756, 65536, 0, 524292, 65536, 1, 589828, 65536, 1, 655364, 65536, 1, 720900, 65536, 1, 786436, 65536, 1, 851972, 65536, 1, 917508, 65536, 1, 983044, 65536, 3, 458757, 131072, 0, 524293, 65536, 1, 589829, 65536, 1, 655365, 131072, 13, 720901, 65536, 1, 786437, 65536, 12, 851973, 65536, 1, 917509, 65536, 1, 983045, 131072, 3, 458758, 65536, 0, 524294, 65536, 1, 589830, 65536, 1, 655366, 65536, 1, 720902, 65536, 1, 786438, 65536, 1, 851974, 65536, 1, 917510, 65536, 1, 983046, 65536, 3, 458759, 131072, 0, 524295, 65536, 1, 589831, 65536, 1, 655367, 65536, 1, 720903, 131072, 13, 786439, 65536, 1, 851975, 65536, 12, 917511, 65536, 1, 983047, 131072, 3, 458760, 65536, 0, 524296, 65536, 12, 589832, 65536, 1, 655368, 65536, 1, 720904, 65536, 1, 786440, 65536, 1, 851976, 65536, 1, 917512, 65536, 1, 983048, 65536, 3, 458761, 131072, 0, 524297, 65536, 1, 589833, 65536, 1, 655369, 65536, 1, 720905, 65536, 1, 786441, 131072, 13, 851977, 65536, 1, 917513, 65536, 12, 983049, 131072, 3, 458762, 65536, 0, 524298, 65536, 1, 589834, 65536, 12, 655370, 65536, 1, 720906, 65536, 1, 786442, 65536, 1, 851978, 65536, 1, 917514, 65536, 1, 983050, 65536, 3, 458763, 131072, 0, 524299, 65536, 1, 589835, 65536, 1, 655371, 65536, 1, 720907, 65536, 1, 786443, 65536, 1, 851979, 131072, 13, 917515, 65536, 1, 983051, 131072, 3, 458764, 65536, 0, 524300, 131072, 13, 589836, 65536, 1, 655372, 65536, 12, 720908, 65536, 1, 786444, 65536, 1, 851980, 65536, 1, 917516, 65536, 1, 983052, 65536, 3, 458765, 131072, 0, 524301, 65536, 1, 589837, 65536, 1, 655373, 65536, 1, 720909, 65536, 1, 786445, 65536, 1, 851981, 65536, 1, 917517, 131072, 13, 983053, 131072, 3, 458766, 65536, 0, 524302, 65536, 1, 589838, 131072, 13, 655374, 65536, 1, 720910, 65536, 12, 786446, 65536, 1, 851982, 65536, 1, 917518, 65536, 1, 983054, 65536, 3, 458767, 131072, 0, 524303, 65536, 1, 589839, 65536, 1, 655375, 65536, 1, 720911, 65536, 1, 786447, 65536, 1, 851983, 65536, 1, 917519, 65536, 1, 983055, 131072, 3, 458768, 65536, 0, 524304, 65536, 1, 589840, 65536, 1, 655376, 131072, 13, 720912, 65536, 1, 786448, 65536, 12, 851984, 65536, 1, 917520, 65536, 1, 983056, 65536, 3, 458769, 131072, 0, 524305, 65536, 1, 589841, 65536, 1, 655377, 65536, 1, 720913, 65536, 1, 786449, 65536, 1, 851985, 65536, 1, 917521, 65536, 1, 983057, 131072, 3, 458770, 65536, 0, 524306, 65536, 1, 589842, 65536, 1, 655378, 65536, 1, 720914, 131072, 13, 786450, 65536, 1, 851986, 65536, 12, 917522, 65536, 1, 983058, 65536, 3, 458771, 131072, 0, 524307, 65536, 12, 589843, 65536, 1, 655379, 65536, 1, 720915, 65536, 1, 786451, 65536, 1, 851987, 65536, 1, 917523, 65536, 1, 983059, 131072, 3, 458772, 65536, 0, 524308, 65536, 1, 589844, 65536, 1, 655380, 65536, 1, 720916, 65536, 1, 786452, 131072, 13, 851988, 65536, 1, 917524, 65536, 12, 983060, 65536, 3, 458773, 131072, 0, 524309, 65536, 1, 589845, 65536, 12, 655381, 65536, 1, 720917, 65536, 1, 786453, 65536, 1, 851989, 65536, 1, 917525, 65536, 1, 983061, 131072, 3, 458774, 65536, 0, 524310, 65536, 1, 589846, 65536, 1, 655382, 65536, 1, 720918, 65536, 1, 786454, 65536, 1, 851990, 131072, 13, 917526, 65536, 1, 983062, 65536, 3, 458775, 131072, 0, 524311, 131072, 13, 589847, 65536, 1, 655383, 65536, 12, 720919, 65536, 1, 786455, 65536, 1, 851991, 65536, 1, 917527, 65536, 1, 983063, 131072, 3, 458776, 65536, 0, 524312, 65536, 1, 589848, 65536, 1, 655384, 65536, 1, 720920, 65536, 1, 786456, 65536, 1, 851992, 65536, 1, 917528, 131072, 13, 983064, 65536, 3, 458777, 131072, 0, 524313, 65536, 1, 589849, 131072, 13, 655385, 65536, 1, 720921, 65536, 12, 786457, 65536, 1, 851993, 65536, 1, 917529, 65536, 1, 983065, 131072, 3, 458778, 65536, 0, 524314, 65536, 1, 589850, 65536, 1, 655386, 65536, 1, 720922, 65536, 1, 786458, 65536, 1, 851994, 65536, 1, 917530, 65536, 1, 983066, 65536, 3, 458779, 131072, 0, 524315, 65536, 1, 589851, 65536, 1, 655387, 131072, 13, 720923, 65536, 1, 786459, 65536, 12, 851995, 65536, 1, 917531, 65536, 1, 983067, 131072, 3, 458780, 65536, 0, 524316, 65536, 1, 589852, 65536, 1, 655388, 65536, 1, 720924, 65536, 1, 786460, 65536, 1, 851996, 65536, 1, 917532, 65536, 1, 983068, 65536, 3, 458781, 131072, 0, 524317, 65536, 1, 589853, 65536, 1, 655389, 65536, 1, 720925, 131072, 13, 786461, 65536, 1, 851997, 65536, 12, 917533, 65536, 1, 983069, 131072, 3, 458782, 65536, 0, 524318, 65536, 12, 589854, 65536, 1, 655390, 65536, 1, 720926, 65536, 1, 786462, 65536, 1, 851998, 65536, 1, 917534, 65536, 1, 983070, 65536, 3, 458783, 131072, 0, 524319, 65536, 1, 589855, 65536, 1, 655391, 65536, 1, 720927, 65536, 1, 786463, 131072, 13, 851999, 65536, 1, 917535, 65536, 12, 983071, 131072, 3, 458784, 65536, 0, 524320, 65536, 1, 589856, 65536, 12, 655392, 65536, 1, 720928, 65536, 1, 786464, 65536, 1, 852000, 65536, 1, 917536, 65536, 1, 983072, 65536, 3, 458785, 131072, 0, 524321, 65536, 1, 589857, 65536, 1, 655393, 65536, 1, 720929, 65536, 1, 786465, 65536, 1, 852001, 131072, 13, 917537, 65536, 1, 983073, 131072, 3, 458786, 65536, 0, 524322, 131072, 13, 589858, 65536, 1, 655394, 65536, 12, 720930, 65536, 1, 786466, 65536, 1, 852002, 65536, 1, 917538, 65536, 1, 983074, 65536, 3, 458787, 131072, 0, 524323, 65536, 1, 589859, 65536, 1, 655395, 65536, 1, 720931, 65536, 1, 786467, 65536, 1, 852003, 65536, 1, 917539, 131072, 13, 983075, 131072, 3, 458788, 65536, 0, 524324, 65536, 1, 589860, 131072, 13, 655396, 65536, 1, 720932, 65536, 12, 786468, 65536, 1, 852004, 65536, 1, 917540, 65536, 1, 983076, 65536, 3, 458789, 131072, 0, 524325, 65536, 1, 589861, 65536, 1, 655397, 65536, 1, 720933, 65536, 1, 786469, 65536, 1, 852005, 65536, 1, 917541, 65536, 1, 983077, 131072, 3, 458790, 65536, 0, 524326, 65536, 1, 589862, 65536, 1, 655398, 131072, 13, 720934, 65536, 1, 786470, 65536, 12, 852006, 65536, 1, 917542, 65536, 1, 983078, 65536, 3, 458791, 131072, 0, 524327, 65536, 1, 589863, 65536, 1, 655399, 65536, 1, 720935, 65536, 1, 786471, 65536, 1, 852007, 65536, 1, 917543, 65536, 1, 983079, 131072, 3, -458712, 0, 0, -393176, 0, 1, -327640, 0, 2, -262104, 0, 1, -196568, 0, 2, -131032, 0, 1, -65496, 0, 2, 40, 0, 1, 65576, 0, 2, 131112, 0, 1, 196648, 0, 2, 262184, 0, 1, 327720, 0, 2, 393256, 0, 1, 458792, 65536, 1, 524328, 65536, 1, 589864, 65536, 1, 655400, 65536, 1, 720936, 131072, 13, 786472, 65536, 1, 852008, 65536, 12, 917544, 65536, 1, 983080, 65536, 3, -458711, 196608, 0, -393175, 196608, 1, -327639, 196608, 2, -262103, 196608, 1, -196567, 196608, 2, -131031, 196608, 1, -65495, 196608, 2, 41, 196608, 1, 65577, 196608, 2, 131113, 196608, 1, 196649, 196608, 2, 262185, 196608, 1, 327721, 196608, 2, 393257, 196608, 1, 458793, 196608, 2, 524329, 196608, 1, 589865, 196608, 2, 655401, 196608, 1, 720937, 196608, 2, 786473, 196608, 1, 852009, 196608, 2, 917545, 196608, 1, 983081, 196608, 3)
 
-[node name="Checkpoint" parent="." instance=ExtResource("ckpt")]
+[node name="Checkpoint" parent="." unique_id=1257905399 instance=ExtResource("ckpt")]
 position = Vector2(95, 168)
 
-[node name="Player" parent="." instance=ExtResource("pl")]
+[node name="Player" parent="." unique_id=1083343880 instance=ExtResource("pl")]
 position = Vector2(130, 168)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1703538044]
 limit_left = 0
 limit_top = -300
 limit_right = 1008
 limit_bottom = 258
+position_smoothing_enabled = true
