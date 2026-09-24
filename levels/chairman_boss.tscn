@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://b3s14y4vaear4"]
 
 [ext_resource type="Script" uid="uid://ro4t378y8fc5" path="res://levels/boss_level.gd" id="1_ioyf1"]
-[ext_resource type="Texture2D" uid="uid://dlh5icbotqwh0" path="res://levels/boss_level/tiles.png" id="2_dd8bj"]
-[ext_resource type="Texture2D" uid="uid://nn1fviyc3tj3" path="res://levels/boss_level/all_assets.png" id="3_d6dj5"]
-[ext_resource type="Texture2D" uid="uid://fwsvep555lcq" path="res://levels/boss_level/office stuffs 8x8.png" id="4_txnsv"]
+[ext_resource type="Texture2D" uid="uid://dlh5icbotqwh0" path="res://tileset/Ofice/tiles.png" id="2_dd8bj"]
+[ext_resource type="Texture2D" uid="uid://nn1fviyc3tj3" path="res://tileset/Ofice/all_assets.png" id="3_d6dj5"]
+[ext_resource type="Texture2D" uid="uid://fwsvep555lcq" path="res://tileset/Ofice/office stuffs 8x8.png" id="4_txnsv"]
 [ext_resource type="PackedScene" uid="uid://ga4ao0p4cd17" path="res://player/player.tscn" id="5_pvfe4"]
 [ext_resource type="PackedScene" uid="uid://cad6ocu21lpsi" path="res://Bosses/Chairman/Chairman Boss.tscn" id="6_pm3dm"]
-[ext_resource type="Texture2D" uid="uid://no4ngt73nj0o" path="res://tileset/gate-01.png" id="7_ign4f"]
+[ext_resource type="Texture2D" uid="uid://no4ngt73nj0o" path="res://tileset/Limbo/gate-01.png" id="7_ign4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_office"]
 texture = ExtResource("2_dd8bj")

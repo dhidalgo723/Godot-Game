@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1yqpf7vhqtjf" path="res://Bosses/Minotaur/Hurt.png" id="5_hurt"]
 [ext_resource type="Texture2D" uid="uid://dd4fpu2bl5mfn" path="res://Bosses/Minotaur/Dead.png" id="6_dead"]
 
+[ext_resource type="Texture2D" path="res://tileset/GUI/fantasy.png" id="gui_fantasy"]
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle0"]
 atlas = ExtResource("2_idle")
 region = Rect2(0, 0, 128, 128)
@@ -295,19 +296,27 @@ height = 66.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axe"]
 size = Vector2(46, 56)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossbg"]
-bg_color = Color(0.08, 0.07, 0.1, 0.85)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossbg"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+region_rect = Rect2(112, 1112, 64, 16)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossfill"]
-bg_color = Color(0.65, 0.35, 0.12, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossfill"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+expand_margin_left = -2
+expand_margin_top = -2
+expand_margin_right = -2
+expand_margin_bottom = -2
+region_rect = Rect2(192, 1080, 64, 16)
+
 
 [node name="Minotaur" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
@@ -352,21 +361,36 @@ disabled = true
 [node name="BossUI" type="CanvasLayer" parent="."]
 visible = false
 
+[node name="Placa" type="NinePatchRect" parent="BossUI"]
+offset_left = 165.0
+offset_top = 220.0
+offset_right = 315.0
+offset_bottom = 240.0
+texture = ExtResource("gui_fantasy")
+region_rect = Rect2(6, 816, 118, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
 [node name="BossName" type="Label" parent="BossUI"]
 offset_left = 90.0
-offset_top = 226.0
+offset_top = 221.0
 offset_right = 390.0
-offset_bottom = 240.0
+offset_bottom = 239.0
 theme_override_font_sizes/font_size = 10
 text = "MINOTAURO"
 horizontal_alignment = 1
 vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.95, 0.85, 1)
+theme_override_colors/font_outline_color = Color(0.25, 0.12, 0.05, 1)
+theme_override_constants/outline_size = 4
 
 [node name="HealthBar" type="ProgressBar" parent="BossUI"]
 offset_left = 90.0
-offset_top = 242.0
+offset_top = 239.0
 offset_right = 390.0
-offset_bottom = 252.0
+offset_bottom = 255.0
 theme_override_styles/background = SubResource("StyleBoxFlat_bossbg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bossfill")
 max_value = 10.0

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bj3mnuyjvcogj" path="res://Bosses/Chairman/Chairmanboss.png" id="1_xuu4i"]
 [ext_resource type="Script" uid="uid://s1p4ruw8qnxw" path="res://Bosses/Chairman/chairman_boss.gd" id="2_boss"]
 
+[ext_resource type="Texture2D" path="res://tileset/GUI/fantasy.png" id="gui_fantasy"]
 [sub_resource type="AtlasTexture" id="AtlasTexture_orn5j"]
 atlas = ExtResource("1_xuu4i")
 region = Rect2(0, 0, 411, 607)
@@ -27,19 +28,27 @@ animations = [{
 radius = 39.0
 height = 168.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossbg"]
-bg_color = Color(0.08, 0.07, 0.1, 0.85)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossbg"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+region_rect = Rect2(112, 1112, 64, 16)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bossfill"]
-bg_color = Color(0.78, 0.15, 0.2, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossfill"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+expand_margin_left = -2
+expand_margin_top = -2
+expand_margin_right = -2
+expand_margin_bottom = -2
+region_rect = Rect2(192, 1080, 64, 16)
+
 
 [node name="ChairmanBoss" type="CharacterBody2D" unique_id=1551645378 groups=["enemy"]]
 position = Vector2(8, 32)
@@ -68,21 +77,36 @@ shape = SubResource("CapsuleShape2D_xuu4i")
 [node name="BossUI" type="CanvasLayer" parent="." unique_id=1977291220]
 visible = false
 
+[node name="Placa" type="NinePatchRect" parent="BossUI"]
+offset_left = 165.0
+offset_top = 220.0
+offset_right = 315.0
+offset_bottom = 240.0
+texture = ExtResource("gui_fantasy")
+region_rect = Rect2(6, 816, 118, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
 [node name="BossName" type="Label" parent="BossUI" unique_id=1696084635]
 offset_left = 90.0
-offset_top = 226.0
+offset_top = 221.0
 offset_right = 390.0
-offset_bottom = 240.0
+offset_bottom = 239.0
 theme_override_font_sizes/font_size = 10
 text = "CHAIRMAN"
 horizontal_alignment = 1
 vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.95, 0.85, 1)
+theme_override_colors/font_outline_color = Color(0.25, 0.12, 0.05, 1)
+theme_override_constants/outline_size = 4
 
 [node name="HealthBar" type="ProgressBar" parent="BossUI" unique_id=1669451408]
 offset_left = 90.0
-offset_top = 242.0
+offset_top = 239.0
 offset_right = 390.0
-offset_bottom = 252.0
+offset_bottom = 255.0
 theme_override_styles/background = SubResource("StyleBoxFlat_bossbg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bossfill")
 max_value = 12.0

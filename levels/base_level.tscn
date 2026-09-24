@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw36w8h7a52lp"]
 
-[ext_resource type="Texture2D" uid="uid://0ohq7p1f5j4t" path="res://tileset/gametilesets_1.png" id="1_80vhd"]
+[ext_resource type="Texture2D" uid="uid://0ohq7p1f5j4t" path="res://tileset/Limbo/gametilesets_1.png" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://ga4ao0p4cd17" path="res://player/player.tscn" id="2_hjsbj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonw3"]

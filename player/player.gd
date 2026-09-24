@@ -5,13 +5,19 @@ extends CharacterBody2D
 @onready var attack_shape_left = $AttackBox/CollisionShape2DLeft # ← shape izquierda
 @onready var hurtbox = $HurtBox
 @onready var health_bar = $PlayerUI/HealthBar
+@onready var vial_label = $PlayerUI/Viales/Cantidad
+@onready var heal_aura = $HealAura
+@onready var heal_particles = $HealAura/Particulas
 const GRAVITY = 1000
 @export var speed: int = 300
 @export var jump: int = -400
 @export var jump_horizontal: int = 100
 @export var roll_speed: int = 250
-@export var max_health: int = 5
-enum State { idle, run, jump, attack, roll, hurt, dead, turnaround, wall_hang }
+@export var max_health: int = 6
+@export var max_vials: int = 3          # ← viales de curacion disponibles
+@export var heal_amount: int = 3        # ← hits que cura cada vial
+@export var heal_time: float = 1.2      # ← lo que dura la animacion de curarse
+enum State { idle, run, jump, attack, roll, hurt, dead, turnaround, wall_hang, heal }
 var current_state : State
 var character_sprite: Sprite2D
 var jump_count: int = 0
@@ -27,6 +33,10 @@ var invulnerable_timer: float = 0.0
 var hurt_timer: float = 0.0
 var respawn_timer: float = 0.0
 var respawn_default: Vector2
+var vials: int
+var is_healing: bool = false
+var heal_timer: float = 0.0
+var aura_tween: Tween = null
 const INVULNERABLE_TIME: float = 1.0   # segundos sin poder recibir daño tras un golpe
 const HURT_TIME: float = 0.35          # segundos sin control tras un golpe
 const RESPAWN_DELAY: float = 0.8       # segundos hasta reaparecer tras morir
@@ -41,6 +51,9 @@ func _ready():
 	attack_shape.disabled = true
 	attack_shape_left.disabled = true   # ← ambos empiezan desactivados
 	update_health_bar()
+	vials = max_vials
+	update_vials()
+	heal_aura.visible = false
 
 func _physics_process(delta : float):
 	if is_dead:
@@ -65,6 +78,11 @@ func _physics_process(delta : float):
 			current_state = State.idle
 		return
 	check_contact_damage()
+	if is_healing:
+		update_heal(delta)
+		return
+	if try_start_heal():
+		return
 	if not is_attacking and not is_rolling and handle_wall(delta):
 		return
 	player_faling(delta)
@@ -194,11 +212,70 @@ func update_health_bar():
 	var frame = int(round((1.0 - ratio) * 7.0))
 	health_bar.texture.region = Rect2(frame * 112, 0, 112, 32)
 
+# ---------- Curacion (tecla H) ----------
+
+func try_start_heal() -> bool:
+	if not Input.is_action_just_pressed("heal"):
+		return false
+	# Solo en el suelo, sin estar atacando/rodando, con viales y sin la vida llena
+	if vials <= 0 or health >= max_health or not is_on_floor() \
+			or is_attacking or is_rolling:
+		return false
+	is_healing = true
+	heal_timer = heal_time
+	current_state = State.heal
+	velocity.x = 0
+	animated_sprite_2d.stop()
+	animated_sprite_2d.play("crouch")
+	show_heal_aura(true)
+	move_and_slide()
+	return true
+
+func update_heal(delta : float):
+	# Quieto y agachado hasta que termine; no se puede hacer nada mas
+	player_faling(delta)
+	velocity.x = 0
+	move_and_slide()
+	heal_timer -= delta
+	if heal_timer <= 0:
+		health = mini(health + heal_amount, max_health)
+		vials -= 1
+		update_health_bar()
+		update_vials()
+		end_heal()
+
+func end_heal():
+	is_healing = false
+	heal_timer = 0.0
+	show_heal_aura(false)
+	if current_state == State.heal:
+		current_state = State.idle
+
+func show_heal_aura(on : bool):
+	if aura_tween != null and aura_tween.is_valid():
+		aura_tween.kill()
+	heal_aura.visible = on
+	heal_particles.emitting = on
+	if on:
+		# El aura crece y late durante exactamente lo que dura la curacion
+		heal_aura.scale = Vector2(0.6, 0.6)
+		heal_aura.modulate.a = 0.0
+		aura_tween = create_tween().set_parallel(true)
+		aura_tween.tween_property(heal_aura, "modulate:a", 1.0, 0.2)
+		aura_tween.tween_property(heal_aura, "scale", Vector2(1.1, 1.1), heal_time) \
+				.set_trans(Tween.TRANS_SINE)
+
+func update_vials():
+	vial_label.text = "x %d" % vials
+	vial_label.modulate = Color(1, 1, 1) if vials > 0 else Color(1, 0.4, 0.4)
+
 func take_damage(from_x : float):
 	# Cualquier ataque (de jefe o de enemigo) quita exactamente 1 hit.
 	# Rodar esquiva el golpe; los i-frames evitan daño en cadena.
 	if is_dead or is_rolling or invulnerable_timer > 0:
 		return
+	if is_healing:
+		end_heal()                           # el golpe cancela la curacion (no gasta vial)
 	health -= 1
 	update_health_bar()
 	invulnerable_timer = INVULNERABLE_TIME
@@ -231,6 +308,9 @@ func respawn():
 	velocity = Vector2.ZERO
 	health = max_health
 	update_health_bar()
+	vials = max_vials                        # al reaparecer se recargan los viales
+	update_vials()
+	end_heal()
 	is_dead = false
 	is_hurt = false
 	invulnerable_timer = INVULNERABLE_TIME

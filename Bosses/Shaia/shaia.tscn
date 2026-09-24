@@ -1,0 +1,600 @@
+[gd_scene format=3 uid="uid://cshaiaboss001"]
+
+[ext_resource type="Script" path="res://Bosses/Shaia/shaia.gd" id="s1"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A01.png" id="t0"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A02.png" id="t1"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A03.png" id="t2"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A04.png" id="t3"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A05.png" id="t4"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A06.png" id="t5"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A07.png" id="t6"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_00_idle_stand_A08.png" id="t7"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk01.png" id="t8"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk02.png" id="t9"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk03.png" id="t10"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk04.png" id="t11"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk05.png" id="t12"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk06.png" id="t13"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk07.png" id="t14"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk08.png" id="t15"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk09.png" id="t16"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk10.png" id="t17"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk11.png" id="t18"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_11_walk12.png" id="t19"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run01.png" id="t20"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run02.png" id="t21"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run03.png" id="t22"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run04.png" id="t23"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run05.png" id="t24"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_12_run06.png" id="t25"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0101.png" id="t26"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0102.png" id="t27"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0103.png" id="t28"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0104.png" id="t29"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0105.png" id="t30"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_01_cobination0106.png" id="t31"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0401.png" id="t32"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0402.png" id="t33"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0403.png" id="t34"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0404.png" id="t35"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0405.png" id="t36"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0406.png" id="t37"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0407.png" id="t38"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0408.png" id="t39"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0409.png" id="t40"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0410.png" id="t41"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_04_cobination0411.png" id="t42"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee01.png" id="t43"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee02.png" id="t44"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee03.png" id="t45"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee04.png" id="t46"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee05.png" id="t47"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_05_knee06.png" id="t48"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0101.png" id="t49"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0102.png" id="t50"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0103.png" id="t51"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0104.png" id="t52"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0105.png" id="t53"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0106.png" id="t54"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0201.png" id="t55"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0202.png" id="t56"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0203.png" id="t57"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0204.png" id="t58"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0205.png" id="t59"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0206.png" id="t60"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0207.png" id="t61"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0208.png" id="t62"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_11_crounch_attack0209.png" id="t63"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_begin01.png" id="t64"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_begin02.png" id="t65"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_01.png" id="t66"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_02.png" id="t67"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_end01.png" id="t68"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_end02.png" id="t69"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_end03.png" id="t70"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_end04.png" id="t71"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_06_run_kick_end05.png" id="t72"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_01_idle_to_crouch01.png" id="t73"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_01_idle_to_crouch02.png" id="t74"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_01_idle_crouch.png" id="t75"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack01.png" id="t76"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack02.png" id="t77"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack03.png" id="t78"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack04.png" id="t79"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack05.png" id="t80"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack06.png" id="t81"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_attack/attack_21_jump_attack07.png" id="t82"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_22_landing01.png" id="t83"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_22_landing02.png" id="t84"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_22_landing03.png" id="t85"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_22_landing04.png" id="t86"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_01_damage_head.png" id="t87"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_02_damage_body.png" id="t88"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_31_guard_stand01.png" id="t89"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_common/common_31_guard_stand02.png" id="t90"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_begin01.png" id="t91"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_begin02.png" id="t92"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_begin03.png" id="t93"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_landing_A01.png" id="t94"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_landing_A02.png" id="t95"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_landing_A03.png" id="t96"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_landing_A04.png" id="t97"]
+[ext_resource type="Texture2D" path="res://Bosses/Shaia/sprites_damage/damage_11_blow_lying_A01.png" id="t98"]
+
+[ext_resource type="Texture2D" path="res://tileset/GUI/fantasy.png" id="gui_fantasy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_shaia"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t19")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t25")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t31")
+}],
+"loop": false,
+"name": &"slash",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t42")
+}],
+"loop": false,
+"name": &"spin",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t48")
+}],
+"loop": false,
+"name": &"knee",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t63")
+}],
+"loop": false,
+"name": &"sweep",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t65")
+}],
+"loop": false,
+"name": &"kick_begin",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t67")
+}],
+"loop": true,
+"name": &"kick",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t69")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t72")
+}],
+"loop": false,
+"name": &"kick_end",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t75")
+}],
+"loop": false,
+"name": &"crouch",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t82")
+}],
+"loop": false,
+"name": &"jump_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t86")
+}],
+"loop": false,
+"name": &"landing",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t88")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t90")
+}],
+"loop": false,
+"name": &"guard",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("t91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("t98")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="Capsule_body"]
+radius = 11.0
+height = 60.0
+
+[sub_resource type="CapsuleShape2D" id="Capsule_hurt"]
+radius = 14.0
+height = 64.0
+
+[sub_resource type="CapsuleShape2D" id="Capsule_contact"]
+radius = 9.0
+height = 54.0
+
+[sub_resource type="RectangleShape2D" id="Rect_atk"]
+size = Vector2(62, 40)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossbg"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+region_rect = Rect2(112, 1112, 64, 16)
+
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxFlat_bossfill"]
+texture = ExtResource("gui_fantasy")
+texture_margin_left = 7
+texture_margin_top = 5
+texture_margin_right = 7
+texture_margin_bottom = 5
+expand_margin_left = -2
+expand_margin_top = -2
+expand_margin_right = -2
+expand_margin_bottom = -2
+region_rect = Rect2(192, 1080, 64, 16)
+
+
+[node name="Shaia" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("s1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -60)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_shaia")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -30)
+shape = SubResource("Capsule_body")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -32)
+shape = SubResource("Capsule_hurt")
+
+[node name="BodyHitbox" type="Area2D" parent="." groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyHitbox"]
+position = Vector2(0, -30)
+shape = SubResource("Capsule_contact")
+
+[node name="AttackBox" type="Area2D" parent="." groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(34, -34)
+shape = SubResource("Rect_atk")
+disabled = true
+
+[node name="BossUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Placa" type="NinePatchRect" parent="BossUI"]
+offset_left = 165.0
+offset_top = 220.0
+offset_right = 315.0
+offset_bottom = 240.0
+texture = ExtResource("gui_fantasy")
+region_rect = Rect2(6, 816, 118, 32)
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BossName" type="Label" parent="BossUI"]
+offset_left = 90.0
+offset_top = 221.0
+offset_right = 390.0
+offset_bottom = 239.0
+theme_override_font_sizes/font_size = 10
+text = "SHAIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+theme_override_colors/font_color = Color(1, 0.95, 0.85, 1)
+theme_override_colors/font_outline_color = Color(0.25, 0.12, 0.05, 1)
+theme_override_constants/outline_size = 4
+
+[node name="HealthBar" type="ProgressBar" parent="BossUI"]
+offset_left = 90.0
+offset_top = 239.0
+offset_right = 390.0
+offset_bottom = 255.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bossbg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bossfill")
+max_value = 24.0
+value = 24.0
+show_percentage = false
