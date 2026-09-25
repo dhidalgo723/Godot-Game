@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bdragonpurple1"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/telegraph_strike.gd" id="scr"]
+[ext_resource type="Texture2D" uid="uid://buirtklhplbk2" path="res://Bosses/Dragon/Magic Attacks/Purple.png" id="tex"]
+
+[sub_resource type="AtlasTexture" id="P0"]
+atlas = ExtResource("tex")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P1"]
+atlas = ExtResource("tex")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P2"]
+atlas = ExtResource("tex")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P3"]
+atlas = ExtResource("tex")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P4"]
+atlas = ExtResource("tex")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P5"]
+atlas = ExtResource("tex")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P6"]
+atlas = ExtResource("tex")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P7"]
+atlas = ExtResource("tex")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P8"]
+atlas = ExtResource("tex")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P9"]
+atlas = ExtResource("tex")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P10"]
+atlas = ExtResource("tex")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="P11"]
+atlas = ExtResource("tex")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("P0")
+}, {
+"duration": 1.0,
+"texture": SubResource("P1")
+}, {
+"duration": 1.0,
+"texture": SubResource("P2")
+}, {
+"duration": 1.0,
+"texture": SubResource("P3")
+}, {
+"duration": 1.0,
+"texture": SubResource("P4")
+}, {
+"duration": 1.0,
+"texture": SubResource("P5")
+}, {
+"duration": 1.0,
+"texture": SubResource("P6")
+}, {
+"duration": 1.0,
+"texture": SubResource("P7")
+}, {
+"duration": 1.0,
+"texture": SubResource("P8")
+}, {
+"duration": 1.0,
+"texture": SubResource("P9")
+}, {
+"duration": 1.0,
+"texture": SubResource("P10")
+}, {
+"duration": 1.0,
+"texture": SubResource("P11")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 38.0
+
+[node name="Purple" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("Frames")
+animation = &"strike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape")

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://bdragonzoom001"]
+
+[ext_resource type="Script" path="res://Bosses/Dragon/Attacks/zoom_attack.gd" id="scr"]
+[ext_resource type="Texture2D" uid="uid://ct8x1em2kwi0i" path="res://Bosses/Dragon/Magic Attacks/Zoom.png" id="tex"]
+
+[sub_resource type="AtlasTexture" id="ZA0"]
+atlas = ExtResource("tex")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZA1"]
+atlas = ExtResource("tex")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZA2"]
+atlas = ExtResource("tex")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS3"]
+atlas = ExtResource("tex")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS4"]
+atlas = ExtResource("tex")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS5"]
+atlas = ExtResource("tex")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS6"]
+atlas = ExtResource("tex")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS7"]
+atlas = ExtResource("tex")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS8"]
+atlas = ExtResource("tex")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="ZS9"]
+atlas = ExtResource("tex")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("ZA0")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZA1")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZA2")
+}],
+"loop": true,
+"name": &"aura",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("ZS3")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS4")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS5")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS6")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS7")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS8")
+}, {
+"duration": 1.0,
+"texture": SubResource("ZS9")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(44, 72)
+
+[node name="Zoom" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -28)
+sprite_frames = SubResource("Frames")
+animation = &"aura"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -36)
+shape = SubResource("Shape")

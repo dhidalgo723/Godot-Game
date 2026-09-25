@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bdragonwind01"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/telegraph_strike.gd" id="scr"]
+[ext_resource type="Texture2D" uid="uid://d05thku8xx0i3" path="res://Bosses/Dragon/Magic Attacks/Wind_Slash.png" id="tex"]
+
+[sub_resource type="AtlasTexture" id="W0"]
+atlas = ExtResource("tex")
+region = Rect2(0, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W1"]
+atlas = ExtResource("tex")
+region = Rect2(92, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W2"]
+atlas = ExtResource("tex")
+region = Rect2(184, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W3"]
+atlas = ExtResource("tex")
+region = Rect2(276, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W4"]
+atlas = ExtResource("tex")
+region = Rect2(368, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W5"]
+atlas = ExtResource("tex")
+region = Rect2(460, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="W6"]
+atlas = ExtResource("tex")
+region = Rect2(552, 0, 92, 92)
+
+[sub_resource type="SpriteFrames" id="Frames"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("W0")
+}, {
+"duration": 1.0,
+"texture": SubResource("W1")
+}, {
+"duration": 1.0,
+"texture": SubResource("W2")
+}, {
+"duration": 1.0,
+"texture": SubResource("W3")
+}, {
+"duration": 1.0,
+"texture": SubResource("W4")
+}, {
+"duration": 1.0,
+"texture": SubResource("W5")
+}, {
+"duration": 1.0,
+"texture": SubResource("W6")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 24.0
+
+[node name="WindSlash" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("Frames")
+animation = &"strike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape")
