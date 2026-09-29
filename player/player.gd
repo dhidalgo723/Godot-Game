@@ -212,7 +212,7 @@ func check_contact_damage():
 		return
 	for area in hurtbox.get_overlapping_areas():
 		if area.is_in_group("enemy_attack"):
-			take_damage(area.global_position.x)
+			take_damage(area.global_position.x, area.get_meta("damage", 1))
 			return
 
 func update_health_bar():
@@ -278,14 +278,14 @@ func update_vials():
 	vial_label.text = "x %d" % vials
 	vial_label.modulate = Color(1, 1, 1) if vials > 0 else Color(1, 0.4, 0.4)
 
-func take_damage(from_x : float):
-	# Cualquier ataque (de jefe o de enemigo) quita exactamente 1 hit.
+func take_damage(from_x : float, amount : int = 1):
+	# Cada ataque quita 1 hit salvo que su Area2D tenga el metadato "damage".
 	# Rodar esquiva el golpe; los i-frames evitan daño en cadena.
 	if is_dead or is_rolling or invulnerable_timer > 0:
 		return
 	if is_healing:
 		end_heal()                           # el golpe cancela la curacion (no gasta vial)
-	health -= 1
+	health -= amount
 	update_health_bar()
 	invulnerable_timer = INVULNERABLE_TIME
 	is_attacking = false
@@ -329,7 +329,7 @@ func respawn():
 
 func _on_hurtbox_area_entered(area : Area2D):
 	if area.is_in_group("enemy_attack"):
-		take_damage(area.global_position.x)
+		take_damage(area.global_position.x, area.get_meta("damage", 1))
 
 func _on_attack_box_area_entered(area : Area2D):
 	pass

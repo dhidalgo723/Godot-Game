@@ -3,7 +3,8 @@ extends CharacterBody2D
 #   - Muy cerca: Garrazo lateral o Escupir fuego (al azar). Hacen daño solo en
 #     los fotogramas del golpe (AttackBox).
 #   - Persecucion: anda despacio y de vez en cuando se para 0,7 s y hace un
-#     acelerón hacia el jugador. Tocar su cuerpo quita vida (BodyHitbox).
+#     acelerón hacia el jugador. Tocar su cuerpo NO hace daño; solo el acelerón
+#     golpea con el cuerpo (BodyHitbox activo mientras dura).
 #   - Garra doble cada 3,7 s: se para y da dos garrazos en la misma zona; el
 #     primero solo marca el area (no hace daño) y el segundo si.
 #   - Mitad de vida: se queda quieto 3 s dentro de una burbuja azul donde no
@@ -271,6 +272,7 @@ func _start_dash():
 		_face(1 if player.global_position.x > global_position.x else -1)
 	current_state = State.dash
 	state_timer = dash_duration
+	_set_body_hitbox(true)
 	animated_sprite_2d.play("run")
 	animated_sprite_2d.speed_scale = 2.2
 
@@ -361,6 +363,7 @@ func _start_shield():
 	state_timer = shield_time
 	velocity.x = 0
 	_set_hitbox(false)
+	_set_body_hitbox(false)
 	claw_marker.visible = false
 	animated_sprite_2d.modulate = Color.WHITE
 	animated_sprite_2d.speed_scale = 1.0
@@ -403,6 +406,9 @@ func _play(anim : String):
 func _set_hitbox(on : bool):
 	attack_box_shape.set_deferred("disabled", not on)
 
+func _set_body_hitbox(on : bool):
+	$BodyHitbox/CollisionShape2D.set_deferred("disabled", not on)
+
 func _flash(col : Color):
 	animated_sprite_2d.modulate = col
 	var tw = create_tween()
@@ -410,6 +416,7 @@ func _flash(col : Color):
 
 func _back_to_idle():
 	_set_hitbox(false)
+	_set_body_hitbox(false)
 	current_state = State.idle
 	current_attack = ""
 	_play("idle")
@@ -500,7 +507,7 @@ func die():
 	bubble.visible = false
 	claw_marker.visible = false
 	_set_hitbox(false)
-	$BodyHitbox/CollisionShape2D.set_deferred("disabled", true)
+	_set_body_hitbox(false)
 	animated_sprite_2d.speed_scale = 1.0
 	animated_sprite_2d.stop()
 	animated_sprite_2d.play("death")

@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://chanmaspin01"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/telegraph_strike.gd" id="scr"]
+[ext_resource type="Texture2D" uid="uid://d2ob8ro6y3nch" path="res://Bosses/Hanma/Magic Attacks/Spines.png" id="tex"]
+
+[sub_resource type="AtlasTexture" id="AT_strike_0"]
+atlas = ExtResource("tex")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_1"]
+atlas = ExtResource("tex")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_2"]
+atlas = ExtResource("tex")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_3"]
+atlas = ExtResource("tex")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_4"]
+atlas = ExtResource("tex")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_5"]
+atlas = ExtResource("tex")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_6"]
+atlas = ExtResource("tex")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AT_strike_7"]
+atlas = ExtResource("tex")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SF"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_strike_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_7")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 32
+
+[node name="Spines" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+metadata/damage = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SF")
+animation = &"strike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0)
+shape = SubResource("Shape")
+disabled = true

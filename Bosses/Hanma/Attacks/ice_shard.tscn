@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://chanmaice01"]
+
+[ext_resource type="Script" path="res://Bosses/Hanma/Attacks/ice_shard.gd" id="scr"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Start1.png" id="start1"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Start2.png" id="start2"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Start3.png" id="start3"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable1.png" id="fly1"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable2.png" id="fly2"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable3.png" id="fly3"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable4.png" id="fly4"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable5.png" id="fly5"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable6.png" id="fly6"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable7.png" id="fly7"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable8.png" id="fly8"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable9.png" id="fly9"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Repeatable10.png" id="fly10"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit1.png" id="hit1"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit2.png" id="hit2"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit3.png" id="hit3"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit4.png" id="hit4"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit5.png" id="hit5"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit6.png" id="hit6"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit7.png" id="hit7"]
+[ext_resource type="Texture2D" path="res://Bosses/Hanma/Magic Attacks/Ice Shard/VFX 1 Hit8.png" id="hit8"]
+
+[sub_resource type="SpriteFrames" id="SF"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("start1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("start2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("start3")
+}],
+"loop": false,
+"name": &"start",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("fly1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("fly10")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("hit1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("hit8")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 9
+
+[node name="IceShard" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+metadata/damage = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SF")
+animation = &"start"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape")

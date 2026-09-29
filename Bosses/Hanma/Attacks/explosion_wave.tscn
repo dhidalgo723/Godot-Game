@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://chanmawave01"]
+
+[ext_resource type="Script" path="res://Bosses/Hanma/Attacks/explosion_wave.gd" id="scr"]
+
+[node name="ExplosionWave" type="Node2D"]
+script = ExtResource("scr")

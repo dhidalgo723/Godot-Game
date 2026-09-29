@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://chanmaatom01"]
+
+[ext_resource type="Script" path="res://Bosses/Chairman/Attacks/telegraph_strike.gd" id="scr"]
+[ext_resource type="Texture2D" uid="uid://cavq8gcw4e6ki" path="res://Bosses/Hanma/Magic Attacks/Atomic.png" id="tex"]
+
+[sub_resource type="AtlasTexture" id="AT_strike_0"]
+atlas = ExtResource("tex")
+region = Rect2(0, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_1"]
+atlas = ExtResource("tex")
+region = Rect2(92, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_2"]
+atlas = ExtResource("tex")
+region = Rect2(184, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_3"]
+atlas = ExtResource("tex")
+region = Rect2(276, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_4"]
+atlas = ExtResource("tex")
+region = Rect2(368, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_5"]
+atlas = ExtResource("tex")
+region = Rect2(460, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_6"]
+atlas = ExtResource("tex")
+region = Rect2(552, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_7"]
+atlas = ExtResource("tex")
+region = Rect2(644, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_8"]
+atlas = ExtResource("tex")
+region = Rect2(736, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_9"]
+atlas = ExtResource("tex")
+region = Rect2(828, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_10"]
+atlas = ExtResource("tex")
+region = Rect2(920, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AT_strike_11"]
+atlas = ExtResource("tex")
+region = Rect2(1012, 0, 92, 92)
+
+[sub_resource type="SpriteFrames" id="SF"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AT_strike_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_9")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AT_strike_11")
+}],
+"loop": false,
+"name": &"strike",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="Shape"]
+radius = 26
+
+[node name="Atomic" type="Area2D" groups=["enemy_attack"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("scr")
+metadata/damage = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SF")
+animation = &"strike"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0)
+shape = SubResource("Shape")
+disabled = true
