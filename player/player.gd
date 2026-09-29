@@ -37,6 +37,9 @@ var vials: int
 var is_healing: bool = false
 var heal_timer: float = 0.0
 var aura_tween: Tween = null
+var attack_recover: float = 0.0
+const ATTACK_RECOVER: float = 0.06     # pausa minima entre ataques: deja que la zona de daño se apague y
+									   # se vuelva a encender, para que cada golpe cuente como uno nuevo
 const INVULNERABLE_TIME: float = 1.0   # segundos sin poder recibir daño tras un golpe
 const HURT_TIME: float = 0.35          # segundos sin control tras un golpe
 const RESPAWN_DELAY: float = 0.8       # segundos hasta reaparecer tras morir
@@ -78,6 +81,8 @@ func _physics_process(delta : float):
 			current_state = State.idle
 		return
 	check_contact_damage()
+	if attack_recover > 0:
+		attack_recover -= delta
 	if is_healing:
 		update_heal(delta)
 		return
@@ -170,9 +175,13 @@ func play_wall_anim(anim_name : String):
 func disable_all_attack_shapes():
 	attack_shape.set_deferred("disabled", true)
 	attack_shape_left.set_deferred("disabled", true)
+	attack_recover = ATTACK_RECOVER
 
 func player_attack():
-	if Input.is_action_just_pressed("attack") and is_on_floor() and not is_rolling:
+	# Mientras dura un ataque (o justo al acabar) las pulsaciones extra se ignoran:
+	# el golpe no se reinicia y tiene que terminar antes de poder atacar otra vez.
+	if Input.is_action_just_pressed("attack") and is_on_floor() and not is_rolling \
+			and not is_attacking and attack_recover <= 0:
 		is_attacking = true
 		current_state = State.attack
 		velocity.x = 0
@@ -187,7 +196,7 @@ func player_attack():
 			attack_shape_left.disabled = true
 
 func player_roll():
-	if Input.is_action_just_pressed("roll") and is_on_floor() and not is_attacking:
+	if Input.is_action_just_pressed("roll") and is_on_floor() and not is_attacking and not is_rolling:
 		is_rolling = true
 		current_state = State.roll
 		roll_direction = -1.0 if animated_sprite_2d.flip_h else 1.0
